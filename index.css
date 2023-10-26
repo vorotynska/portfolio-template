@@ -313,6 +313,7 @@ body:not(.user-is-tabbing) a:focus {
     z-index: 10;
     visibility: hidden;
     transition: all .4s;
+    
 }
 
 .back-to-top__image {
@@ -593,6 +594,10 @@ body:not(.user-is-tabbing) a:focus {
 
 .footer__social-image {
     height: 4rem;
+}
+
+.footer__social-image:hover {
+    transform: scale(1.2);
 }
 
 .footer__github-buttons {
