@@ -23,7 +23,17 @@
 }
 
 :root {
-    --blue: #1b1b49;
+    --text-color: #221d1d;
+    --primary-color: #008AD8;
+    --italic-color: #565656;
+    --pink: #ff3258;
+
+    --font-size--small-1: 1.6rem;
+    --font-size-small: 1.8rem;
+    --font-size-normal: 2rem;
+    --font-size-medium: 2.8rem;
+
+    --gutter-small: 2rem;
 
     --font-stack: 'Hk Grotesk', sans-serif;
 }
@@ -42,9 +52,122 @@ html {
 
 body {
     font-family: var(--font-stack);
-    background: lightgray;
+    background: #F4F4F4;
+    font-size: var(--font-size-small);
+    line-height: 1.4;
+}
+
+.container {
+    margin: 2.8em;
+}
+
+.row {
+    display: none;
+}
+
+.left-col {
+    display: none;
 }
 
 header {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 4rem;
+}
+
+.personal-info {
+    font-size: var(--font-size--small-1);
+    color: var(--text-color);
+}
+
+.border {
+    position: relative;
+    margin-bottom: var(--gutter-small);
+}
+
+.border:before {
+  content: '';
+  border-bottom: 1px solid rgb(36, 35, 35);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 120%;
+}
+
+.main-title {
+    color: var(--primary-color);
+    font-family: 'Jost', sans-serif;
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--gutter-small);
+    margin-top: var(--gutter-small);
+    font-weight: 600;
+    letter-spacing: .2rem;
+    position: relative;
+}
+
+.main-title:before {
+    content: '';
+  border-bottom: 1px solid rgb(36, 35, 35);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 120%;  
+}
+
+.main-content, .main-data {
+    color: var(--text-color);
+    font-size: var(--font-size-normal);
+}
+
+.main-text {
+    font-size: var(--font-size-small);
+    font-style: italic;
+    color: var(--italic-color);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: var(--pink);
+    border-radius: 50%;
+    z-index: 10;
+    visibility: hidden;
+    transition: all .4s;
+    
+}
+
+.back-to-top__image {
+    height: 70%;
+}
+
+@media(max-width: 900px) {
+    .back-to-top {
+        right: 2rem;
+    }
+
+}
+
+@media(max-width: 500px) {
+    .back-to-top {
+        right: 1rem;
+    }
+}
+
+@media only screen and (min-width: 901px) {
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
