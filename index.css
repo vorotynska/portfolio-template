@@ -482,7 +482,7 @@ body:not(.user-is-tabbing) a:focus {
     display: block;
     height: 3rem;
     margin-left: var(--gutter-normal);
-    transition: all .3s;
+    transition: .3s all;
 }
 
 .work__code:hover {

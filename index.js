@@ -3,7 +3,7 @@
  ---------------------------------------- */
 
 const handleFirstTab = (e) => {
-  if(e.key === 'Tab') {
+  if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
 
     window.removeEventListener('keydown', handleFirstTab)
@@ -27,9 +27,9 @@ let isBackToTopRendered = false;
 let alterStyles = (isBackToTopRendered) => {
   backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
   backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
-  backToTopButton.style.transform = isBackToTopRendered
-    ? "scale(1)"
-    : "scale(0)";
+  backToTopButton.style.transform = isBackToTopRendered ?
+    "scale(1)" :
+    "scale(0)";
 };
 
 window.addEventListener("scroll", () => {
@@ -41,3 +41,15 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+const menuBtn = document.querySelector('.menu-btn')
+const menu = document.querySelector('nav ul')
+const backBtn = document.querySelector('.back-btn')
+
+menuBtn.addEventListener('click', () => {
+  menu.style.transform = 'translateX(0)'
+})
+
+backBtn.addEventListener('click', () => {
+  menu.style.transform = 'translateX(100%)'
+})
